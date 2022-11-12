@@ -1,0 +1,13 @@
+apply from : "$rootProject.projectDir/dependencies-app.gradle"
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+
+}

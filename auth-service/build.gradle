@@ -1,0 +1,82 @@
+dependencies {
+
+    // SpringBoot basic
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    // Spring Data jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // spring security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // Spring Boot Mybatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+
+//    implementation 'org.springframework.boot:spring-boot-starter-validation'
+//    implementation 'org.hibernate.validator:hibernate-validator:7.0.4.Final'
+//    implementation 'org.hibernate:hibernate-java8:5.6.8.Final'
+//    implementation 'org.glassfish:jakarta.el:4.0.2'
+
+
+
+    // Spring Cloud
+    // Spring Cloud Bootstrap
+    // 현재 사용 용도는 마이크로 서비스 모듈에서 컨피그 서버 정보를 유레카 서버에 등록된 서비스 아이디로 설정하기 위해서 사용
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+
+    // Spring Cloud Config Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+
+    // Spring Cloud Eureka Client
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    // Spring Cloud Starter Actuator
+    // health 및 refresh 처리를 위해 필요한 monitor dependency가 있다면, actuator의 refresh나 bus-refresh는 사용하지 않음
+//    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // Spring Cloud Starter Bus Kafka
+    // Kafak로 bus-refresh 메세지를 전송하여 Config Client들에게 모두 변경된 설정 정보가 적용될 수 있도록 한다.
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-kafka'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
+
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign'
+
+
+    // Spring Cloud Starter Bus AMQP
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+
+    // MySQL
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    // JWT 관련 의존성
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
+
+    // json lib
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation group: 'org.json', name: 'json', version: '20210307'
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
+
+    // Mapstruct
+    implementation 'org.mapstruct:mapstruct:1.5.1.Final'
+    implementation 'org.mapstruct:mapstruct-processor:1.5.1.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.1.Final'
+
+    /**
+     * anonymous-planet-common lib
+     */
+    implementation project(path : ':core-api', configuration : 'default')
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}

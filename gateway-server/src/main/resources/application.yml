@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: destiny-planet-gateway-server
+  cloud:
+    config:
+      discovery:
+        # 마이크로 서비스에 Config Server URL을 노출하지 않기 위해 이 방식 사용
+        # Eureka 서버에 등록된 서비스 아이디
+        service-id: DESTINY-PLANET-CONFIG-SERVER

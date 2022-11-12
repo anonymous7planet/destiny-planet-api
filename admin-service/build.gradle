@@ -1,0 +1,14 @@
+dependencies {
+    /**
+     * anonymous-planet-common lib
+     */
+    implementation project(path : ':core-api', configuration : 'default')
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}
